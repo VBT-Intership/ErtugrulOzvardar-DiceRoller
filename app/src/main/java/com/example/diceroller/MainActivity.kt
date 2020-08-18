@@ -12,6 +12,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var diceImg: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,12 +23,12 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+        diceImg = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
 
         val randomValue = Random.nextInt(1,7)
-        val diceImg: ImageView = findViewById(R.id.dice_image)
             val drawableResource = when (randomValue){
                 1 -> R.drawable.dice_1
                 2 -> R.drawable.dice_2

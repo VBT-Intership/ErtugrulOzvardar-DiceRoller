@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun rollDice() {
         val dice: TextView = findViewById(R.id.result_text)
-        dice.text = "You rolled the Dice!"
+        val randomValue = Random.nextInt(1,7)
+        dice.text = randomValue.toString()
     }
 }

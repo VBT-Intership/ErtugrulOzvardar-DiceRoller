@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,5 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.text = "Let's Roll!"
+        rollButton.setOnClickListener {
+            Toast.makeText(this,"Button clicked !",Toast.LENGTH_LONG).show()
+        }
     }
 }
